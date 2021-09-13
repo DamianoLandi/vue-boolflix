@@ -1,7 +1,13 @@
 <template>
     <div class="cards-container">
-        <div v-for="(list, index) in lists" :key="index" class="card-container">
-            <Card :list="list"/>
+        <div v-for="(list, index) in lists" :key="index" class="main-container">
+            <div class="title-container" v-if="list != null">
+                <h2 v-if="index === 0">Film</h2>
+                <h2 v-else>Serie TV</h2>
+            </div>
+            <div class="card-container">
+                <Card :list="list"/>
+            </div>
         </div>
     </div>
 </template>
@@ -19,12 +25,16 @@ export default {
 </script>
 
 <style>
-    .cards-container{
+    .card-container{
         display: flex;
         justify-content: space-around;
+        position: relative;
     }
 
-    .card-container{
-        width: 20%;
+    h2{
+        text-align: center;
+        margin: 50px auto;
+        color: darkred;
+        text-transform: uppercase;
     }
 </style>
