@@ -1,27 +1,30 @@
 <template>
-    <div>
-        <div v-for="(list, index) in lists" :key="index">
-            <ul>
-                <li v-for="(movie, index) in list" :key="index">
-                    <p v-if="movie.title">Titolo: {{movie.title}}</p>
-                    <p v-else>Titolo: {{movie.name}}</p>
-                    <p v-if="movie.title">Titolo Originale: {{movie.original_title}}</p>
-                    <p v-else>Titolo Originale: {{movie.original_name}}</p>
-                    <div>Lingua Originale: <img v-if="movie.original_language === 'en'" src="@/assets/img/en.png" alt="EN"> <img v-if="movie.original_language === 'it'" src="@/assets/img/it.png" alt="it"> <span v-if="movie.original_language != 'en' && movie.original_language != 'it'">{{movie.original_language}}</span></div>
-                    <p>Voto: {{movie.vote_average}}</p>
-                </li>
-            </ul>
+    <div class="cards-container">
+        <div v-for="(list, index) in lists" :key="index" class="card-container">
+            <Card :list="list"/>
         </div>
     </div>
 </template>
 
 <script>
+import Card from "@/components/Card.vue"
+
 export default {
     name: "MainContent",
+    components: {
+        Card,
+    },
     props:["lists",]
 }
 </script>
 
 <style>
+    .cards-container{
+        display: flex;
+        justify-content: space-around;
+    }
 
+    .card-container{
+        width: 20%;
+    }
 </style>
