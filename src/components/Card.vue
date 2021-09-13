@@ -74,6 +74,7 @@ export default {
 
     .card-info:hover{
         opacity: 1;
+        cursor: pointer;
     }
     
     .lang{

@@ -38,8 +38,9 @@ export default {
 
     h2{
         text-align: center;
-        margin: 50px auto;
+        margin: 40px auto;
         color: rgb(172, 7, 7);
         text-transform: uppercase;
+        font-size: 35px;
     }
 </style>
