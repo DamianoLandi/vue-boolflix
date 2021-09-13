@@ -9,6 +9,7 @@
                 <p v-else>Titolo Originale: {{movie.original_name}}</p>
                 <div>Lingua Originale: <img v-if="movie.original_language === 'en'" src="@/assets/img/en.png" alt="EN" class="lang"> <img v-if="movie.original_language === 'it'" src="@/assets/img/it.png" alt="it" class="lang"> <span v-if="movie.original_language != 'en' && movie.original_language != 'it'">{{movie.original_language}}</span></div>
                 <p>Voto: <span v-for="num in adaptNumber(movie.vote_average)" :key="num"><i class="fas fa-star"></i></span><span v-for="num in (5 - adaptNumber(movie.vote_average))" :key= "num"><i class="far fa-star"></i></span></p>
+                <p>Trama: <span v-if="movie.overview">{{movie.overview}}</span> <span v-else>Non è presente una descrizione per questo elemento.</span></p>
             </div>
         </div>
     </div>
@@ -37,7 +38,7 @@ export default {
 <style>
     .cards-container{
         display: flex;
-        max-width: 75vw;
+        padding: 50px;
         margin: auto;
         flex-wrap: wrap;
         justify-content: space-around;
@@ -58,7 +59,8 @@ export default {
 
     .card-info{
         opacity: 0;
-        background-color: gray;
+        background-color: rgb(22, 22, 22);
+        color: white;
         position: absolute;
         top: 0;
         left: 0;
@@ -67,14 +69,17 @@ export default {
         width: 100%;
         overflow-y: scroll;
         text-align: center;
+        padding: 15px;
     }
 
     .card-info:hover{
         opacity: 1;
     }
-
+    
     .lang{
         height: 50px;
         widows: 100px;
+        vertical-align: middle;
     }
+
 </style>

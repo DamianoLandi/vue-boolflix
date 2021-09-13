@@ -1,9 +1,12 @@
 <template>
   <div id="app">
-    <nav>
-      <input v-model="searchTerm" type="text">
-      <button v-on:click="getData">Cerca</button>
-    </nav>
+    <header>
+      <h1>Boolfix</h1>
+      <nav>
+        <input v-model="searchTerm" type="text">
+        <button v-on:click="getData">Cerca</button>
+      </nav>
+    </header>
     <MainContent :lists="lists"/>  
   </div>
 </template>
@@ -67,6 +70,20 @@ export default {
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
+}
+
+header{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: rgb(49, 48, 48);
+  height: 100px;
+}
+
+h1{
+  color: rgb(172, 7, 7);
+  text-transform: uppercase;
+  font-weight: 800;
 }
 
 nav{

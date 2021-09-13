@@ -25,6 +25,11 @@ export default {
 </script>
 
 <style>
+    .cards-container{
+        background-color: rgb(138, 136, 136);
+        min-height: calc(100vh - 100px);
+    }
+
     .card-container{
         display: flex;
         justify-content: space-around;
@@ -34,7 +39,7 @@ export default {
     h2{
         text-align: center;
         margin: 50px auto;
-        color: darkred;
+        color: rgb(172, 7, 7);
         text-transform: uppercase;
     }
 </style>
